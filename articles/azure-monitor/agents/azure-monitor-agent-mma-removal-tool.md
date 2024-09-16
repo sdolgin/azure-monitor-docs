@@ -313,8 +313,11 @@ function GetInventory
 
     Start-Transcript -Path $logFileName -Append
     GetVmsWithLogAnalyticsAgentExtensionInstalled $fileName
-    GetVmssWithLogAnalyticsAgentExtensionInstalled $fileName
-    GetArcServersWithLogAnalyticsAgentExtensionInstalled $fileName
+
+    # Skip the VMSS & Arc functions from the inventory in this version. 
+    #GetVmssWithLogAnalyticsAgentExtensionInstalled $fileName
+    #GetArcServersWithLogAnalyticsAgentExtensionInstalled $fileName
+
     Stop-Transcript
 }
 
